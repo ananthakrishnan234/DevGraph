@@ -252,17 +252,6 @@ Frontend runs at `http://localhost:3000`.
 - The backend's `GlobalExceptionHandler` catches database/connectivity failures and returns a clean, structured JSON error instead of leaking stack traces to the client.
 - The frontend renders dedicated **loading**, **empty**, and **error** states (with a "Try again" retry action) on every page, so the UI degrades gracefully if CognoDB or the backend is temporarily unreachable instead of showing a blank screen.
 
----
-
-## 📸 Screenshots
-
-*(Add screenshots of the Developers page, a Developer profile, and the Skill Connection Explorer here.)*
-
----
-
-## 🎥 Demo Recording
-
-*(Add a link to a short screen recording walking through the app here.)*
 
 ---
 
