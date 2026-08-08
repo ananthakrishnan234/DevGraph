@@ -11,7 +11,7 @@
 
 **A graph-powered application that explores how developers, skills, projects, and technologies connect — built on CognoDB using parameterized openCypher traversals.**
 
-[🌐 Live Demo](https://dev-graph-sable.vercel.app/) · [🐙 Source Code](https://github.com/ananthakrishnan234/DevGraph) · [🐛 Report Bug](https://github.com/ananthakrishnan234/DevGraph/issues)
+[🌐 Live Demo](https://dev-graph-sable.vercel.app/) · [🐛 Report Bug](https://github.com/ananthakrishnan234/DevGraph/issues)
 
 </div>
 
