@@ -48,32 +48,6 @@ public class GraphService {
             });
         }
     }
-    public List<String> getSkills() {
-
-        try (Session session = driver.session()) {
-
-            return session.executeRead(tx -> {
-
-                var result = tx.run("""
-                MATCH (s:Skill)
-                RETURN s.name AS name
-                ORDER BY s.name
-                """);
-
-                List<String> skills = new ArrayList<>();
-
-                while (result.hasNext()) {
-                    Record record = result.next();
-
-                    skills.add(
-                            record.get("name").asString()
-                    );
-                }
-
-                return skills;
-            });
-        }
-    }
 
     public Map<String, Object> getDeveloper(String id) {
 
@@ -107,6 +81,32 @@ public class GraphService {
             });
         }
     }
+    public List<String> getSkills() {
+
+        try (Session session = driver.session()) {
+
+            return session.executeRead(tx -> {
+
+                var result = tx.run("""
+                MATCH (s:Skill)
+                RETURN s.name AS name
+                ORDER BY s.name
+                """);
+
+                List<String> skills = new ArrayList<>();
+
+                while (result.hasNext()) {
+                    Record record = result.next();
+
+                    skills.add(
+                            record.get("name").asString()
+                    );
+                }
+
+                return skills;
+            });
+        }
+    }
 
     public List<Map<String, Object>> findSkillPath(
             String from,
@@ -120,7 +120,7 @@ public class GraphService {
                 var result = tx.run("""
                     MATCH path = shortestPath(
                         (a:Skill {name: $from})
-                        -[:RELATED_TO|PREREQUISITE_FOR*..5]->
+                        -[:PREREQUISITE_FOR*..5]->
                         (b:Skill {name: $to})
                     )
                     RETURN [node IN nodes(path) | node.name] AS skills

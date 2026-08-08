@@ -33,13 +33,6 @@ public class GraphController {
     public List<String> getSkills() {
         return graphService.getSkills();
     }
-    @GetMapping("/health")
-    public Map<String, String> health() {
-        return Map.of(
-                "status", "UP",
-                "service", "devgraph-backend"
-        );
-    }
 
     @GetMapping("/skills/path")
     public List<Map<String, Object>> getSkillPath(
