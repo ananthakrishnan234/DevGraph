@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:8081/api";
+const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:8081/api";
 
 async function request(endpoint) {
   const response = await fetch(`${API_BASE_URL}${endpoint}`);
